@@ -89,8 +89,9 @@ function onMessageArrived(r_message){
         document.getElementById("messages").innerHTML = "Location: " + loc_msg['features'][0]['geometry']['coordinates'][0] + "-" +  "temperture: " + loc_msg['features'][0]['properties']['temp'][0][0];
         draw_Location(loc_msg['features'][0]['geometry']['coordinates'][0][0], loc_msg['features'][0]['geometry']['coordinates'][0][1],
         loc_msg['features'][0]['properties']['temp'][0][0]);
+    }else{
+    document.getElementById("messages").innerHTML =out_msg;
     }
-    // document.getElementById("messages").innerHTML =out_msg;
 }
 
 function onConnected(recon, url){
