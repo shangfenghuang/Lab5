@@ -142,7 +142,7 @@ function MQTTconnect() {
     mqtt = new Paho.MQTT.Client(host,port,cname);
     //document.write("connecting to "+ host);
     var options = {
-        useSSL:true,
+//         useSSL:true,
         timeout: 10,
         onSuccess: onConnect,
         onFailure: onFailure,
