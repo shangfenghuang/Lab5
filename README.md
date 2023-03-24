@@ -1,6 +1,7 @@
 ENGO651-lab5
 
 Group 4: Cheuk Him, NG (30183823); Shang Feng, Huang (30163965)
+https://shangfenghuang.github.io/lab5.github.io/
 
 In this lab, we designed a web page application that allow users to establish a connection with an MQTT message broker and publish messages to any topic they choose. It can create and publish a Geojson message with the user's current location with a random temperature value, which can be subscribed to and read by MQTTX. Aside from that, this application could also be used on the web browsers and mobile phones. Our application offers the following features:
 
