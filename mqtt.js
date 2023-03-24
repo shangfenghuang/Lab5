@@ -117,7 +117,43 @@ function disconnect()
 }
 
 function MQTTconnect() {
-	console.log(123);
+    keep_connect = true;
+    id_server = document.getElementById('server')
+    id_server.disabled = true;
+    id_port = document.getElementById('port')
+    id_port.disabled = true;
+    document.getElementById("status").innerHTML ="";
+    var s = id_server.value;
+    var p = id_port.value;
+    if (p!="")
+    {
+    console.log("ports");
+        port=parseInt(p);
+        console.log("port" +port);
+        }
+    if (s!="")
+    {
+        host=s;
+        console.log("host");
+        }
+    console.log("connecting to "+ host +" "+ port);
+    var x=Math.floor(Math.random() * 10000); 
+    var cname="orderform-"+x;
+    mqtt = new Paho.MQTT.Client(host,port,cname);
+    //document.write("connecting to "+ host);
+    var options = {
+        // useSSL:true,
+        timeout: 10,
+        onSuccess: onConnect,
+        onFailure: onFailure,
+        
+        };
+
+        mqtt.onConnectionLost = onConnectionLost;
+        mqtt.onMessageArrived = onMessageArrived;
+        //mqtt.onConnected = onConnected;
+
+    mqtt.connect(options);
     return false;
 }
 
